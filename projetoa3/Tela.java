@@ -41,6 +41,7 @@ public class Tela extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela Login Teste");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtUser.setBackground(new java.awt.Color(217, 217, 217));
@@ -74,7 +75,7 @@ public class Tela extends javax.swing.JFrame {
                 jButton1KeyPressed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 335, 150, 35));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, 150, 35));
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
         jButton3.setForeground(new java.awt.Color(2, 76, 113));
@@ -118,7 +119,7 @@ public class Tela extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 110, 10));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ACER\\Documents\\NetBeansProjects\\ProjetoA3\\files\\Rascunho Projeto A3@2x.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\OneDrive\\Documentos\\NetBeansProjects\\ProjetoA3\\files\\Rascunho Projeto A3@2x.png")); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, -1));
 
