@@ -7,9 +7,9 @@
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
-            <groupId>group.id</groupId>
-            <artifactId>jtattoo</artifactId>
-            <version>1.0</version>
+            <groupId>com.jtattoo</groupId>
+            <artifactId>JTattoo</artifactId>
+            <version>1.6.13</version>
         </dependency>
     </dependencies>
     <properties>
