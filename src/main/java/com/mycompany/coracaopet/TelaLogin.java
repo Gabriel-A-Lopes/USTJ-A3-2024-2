@@ -11,12 +11,15 @@ import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.net.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author ACER
  */
 public class TelaLogin extends javax.swing.JFrame {
 
+    private Timer timer;
     /**
      * Creates new form TelaLogin
      */
@@ -33,6 +36,7 @@ public class TelaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        telaCriarConta = new TelaCriarConta();
         gradientPanel = new GradientPanel(new Color(9, 98, 73), new Color(18, 223, 165));
         jPanel1 = new RoundPanel();
         jTextField3 = new javax.swing.JTextField();
@@ -46,7 +50,19 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel2 = new RoundPanel();
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        criarConta = new GradientPanel(new Color(9, 98, 73), new Color(18, 223, 165));
+        dogGif = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout telaCriarContaLayout = new javax.swing.GroupLayout(telaCriarConta);
+        telaCriarConta.setLayout(telaCriarContaLayout);
+        telaCriarContaLayout.setHorizontalGroup(
+            telaCriarContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        telaCriarContaLayout.setVerticalGroup(
+            telaCriarContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Login");
@@ -93,6 +109,11 @@ public class TelaLogin extends javax.swing.JFrame {
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
         jButton3.setFocusPainted(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/olhosla.png"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -217,10 +238,14 @@ public class TelaLogin extends javax.swing.JFrame {
         getContentPane().add(gradientPanel);
         gradientPanel.setBounds(400, 0, 400, 600);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/truemaybe.gif"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, 0, 400, 600);
+        criarConta.setLayout(null);
+        getContentPane().add(criarConta);
+        criarConta.setBounds(160, 130, 0, 0);
+
+        dogGif.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/truemaybe.gif"))); // NOI18N
+        dogGif.setText("jLabel3");
+        getContentPane().add(dogGif);
+        dogGif.setBounds(0, 0, 400, 600);
 
         pack();
         setLocationRelativeTo(null);
@@ -240,6 +265,39 @@ public class TelaLogin extends javax.swing.JFrame {
             jLabel2.setIcon(new ImageIcon(TelaLogin.class.getResource("/images/olhosla.png")));
         }
     }//GEN-LAST:event_jLabel2MouseClicked
+    
+    private void animatePanel() {
+        timer = new Timer(10, new ActionListener(){
+            int currentWidth = 400;
+            
+            @Override
+            public void actionPerformed(ActionEvent e){
+                currentWidth += 10;
+                if(currentWidth >= 800){
+                    currentWidth = 800;
+                    timer.stop();
+                    criarConta.setVisible(false);
+                    dogGif.setVisible(false);
+                    add(telaCriarConta);
+                    telaCriarConta.setBounds(0, 0, 800, 600);
+                    telaCriarConta.setVisible(true);
+                }
+                criarConta.setBounds(800 - currentWidth, 0, currentWidth, 600);
+                criarConta.repaint();
+            }
+        });
+        timer.start();
+        
+    }
+    
+    
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        dogGif.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/truemaybepaused.gif")));
+        gradientPanel.setVisible(false);
+        jPanel1.setVisible(false);
+        jPanel2.setVisible(false);
+        animatePanel();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -284,13 +342,14 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel criarConta;
+    private javax.swing.JLabel dogGif;
     private javax.swing.JPanel gradientPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField1;
@@ -298,5 +357,6 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JPanel telaCriarConta;
     // End of variables declaration//GEN-END:variables
 }
