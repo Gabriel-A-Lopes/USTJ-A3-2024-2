@@ -25,31 +25,24 @@ public class TelaAdocao extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new RoundPanel();
-        estado = new javax.swing.JLabel();
-        arrow1 = new javax.swing.JButton();
-        cidade = new javax.swing.JLabel();
-        loja = new javax.swing.JLabel();
-        ong = new javax.swing.JLabel();
-        especie = new javax.swing.JLabel();
-        idade = new javax.swing.JLabel();
-        porte = new javax.swing.JLabel();
-        sexo = new javax.swing.JLabel();
+        filterPane = new RoundPanel();
         btAplicar = new javax.swing.JButton();
-        arrow2 = new javax.swing.JButton();
-        arrow3 = new javax.swing.JButton();
-        arrow4 = new javax.swing.JButton();
-        arrow5 = new javax.swing.JButton();
-        arrow6 = new javax.swing.JButton();
-        arrow7 = new javax.swing.JButton();
-        arrow8 = new javax.swing.JButton();
+        estadosFilter = new javax.swing.JComboBox<>();
+        cidadesFilter = new javax.swing.JComboBox<>();
+        lojaFilter = new javax.swing.JComboBox<>();
+        ongFilter = new javax.swing.JComboBox<>();
+        especieFilter = new javax.swing.JComboBox<>();
+        idadeFilter = new javax.swing.JComboBox<>();
+        porteFilter = new javax.swing.JComboBox<>();
+        sexoFilter = new javax.swing.JComboBox<>();
+        jPanel3 = new RoundPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
         setPreferredSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(21, 198, 148));
@@ -58,212 +51,72 @@ public class TelaAdocao extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 800, 96);
 
-        jPanel2.setBackground(new java.awt.Color(217, 217, 217));
-        java.awt.GridBagLayout jPanel2Layout = new java.awt.GridBagLayout();
-        jPanel2Layout.columnWidths = new int[] {0, 5, 0};
-        jPanel2Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
-        jPanel2.setLayout(jPanel2Layout);
-
-        estado.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        estado.setForeground(new java.awt.Color(0, 0, 0));
-        estado.setText("Estado");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.insets = new java.awt.Insets(7, 7, 0, 0);
-        jPanel2.add(estado, gridBagConstraints);
-
-        arrow1.setBackground(new java.awt.Color(217, 217, 217));
-        arrow1.setForeground(new java.awt.Color(0, 0, 0));
-        arrow1.setText("▼");
-        arrow1.setBorder(null);
-        arrow1.setBorderPainted(false);
-        arrow1.setContentAreaFilled(false);
-        arrow1.setFocusPainted(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 7);
-        jPanel2.add(arrow1, gridBagConstraints);
-
-        cidade.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        cidade.setForeground(new java.awt.Color(0, 0, 0));
-        cidade.setText("Cidade");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 7, 0, 0);
-        jPanel2.add(cidade, gridBagConstraints);
-
-        loja.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        loja.setForeground(new java.awt.Color(0, 0, 0));
-        loja.setText("Loja");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipady = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 7, 0, 0);
-        jPanel2.add(loja, gridBagConstraints);
-
-        ong.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        ong.setForeground(new java.awt.Color(0, 0, 0));
-        ong.setText("ONG");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 7, 0, 0);
-        jPanel2.add(ong, gridBagConstraints);
-
-        especie.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        especie.setForeground(new java.awt.Color(0, 0, 0));
-        especie.setText("Espécie");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 7, 0, 0);
-        jPanel2.add(especie, gridBagConstraints);
-
-        idade.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        idade.setForeground(new java.awt.Color(0, 0, 0));
-        idade.setText("Idade");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 7, 0, 0);
-        jPanel2.add(idade, gridBagConstraints);
-
-        porte.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        porte.setForeground(new java.awt.Color(0, 0, 0));
-        porte.setText("Porte");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 7, 0, 0);
-        jPanel2.add(porte, gridBagConstraints);
-
-        sexo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        sexo.setForeground(new java.awt.Color(0, 0, 0));
-        sexo.setText("Sexo");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 14;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 7, 0, 0);
-        jPanel2.add(sexo, gridBagConstraints);
+        filterPane.setBackground(new java.awt.Color(217, 217, 217));
+        filterPane.setLayout(null);
 
         btAplicar.setBackground(new java.awt.Color(21, 198, 148));
         btAplicar.setFont(new java.awt.Font("Hammersmith One", 0, 11)); // NOI18N
         btAplicar.setForeground(new java.awt.Color(0, 0, 0));
         btAplicar.setText("Aplicar");
         btAplicar.setFocusPainted(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 16;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.FIRST_LINE_END;
-        gridBagConstraints.weighty = 0.1;
-        jPanel2.add(btAplicar, gridBagConstraints);
+        filterPane.add(btAplicar);
+        btAplicar.setBounds(40, 250, 68, 24);
 
-        arrow2.setBackground(new java.awt.Color(217, 217, 217));
-        arrow2.setForeground(new java.awt.Color(0, 0, 0));
-        arrow2.setText("▼");
-        arrow2.setBorder(null);
-        arrow2.setBorderPainted(false);
-        arrow2.setContentAreaFilled(false);
-        arrow2.setFocusPainted(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 7);
-        jPanel2.add(arrow2, gridBagConstraints);
+        estadosFilter.setBackground(new java.awt.Color(217, 217, 217));
+        estadosFilter.setForeground(new java.awt.Color(0, 0, 0));
+        estadosFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        estadosFilter.setFocusable(false);
+        filterPane.add(estadosFilter);
+        estadosFilter.setBounds(7, 10, 140, 24);
 
-        arrow3.setBackground(new java.awt.Color(217, 217, 217));
-        arrow3.setForeground(new java.awt.Color(0, 0, 0));
-        arrow3.setText("▼");
-        arrow3.setBorder(null);
-        arrow3.setBorderPainted(false);
-        arrow3.setContentAreaFilled(false);
-        arrow3.setFocusPainted(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 7);
-        jPanel2.add(arrow3, gridBagConstraints);
+        cidadesFilter.setBackground(new java.awt.Color(217, 217, 217));
+        cidadesFilter.setForeground(new java.awt.Color(0, 0, 0));
+        cidadesFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        filterPane.add(cidadesFilter);
+        cidadesFilter.setBounds(7, 40, 140, 24);
 
-        arrow4.setBackground(new java.awt.Color(217, 217, 217));
-        arrow4.setForeground(new java.awt.Color(0, 0, 0));
-        arrow4.setText("▼");
-        arrow4.setBorder(null);
-        arrow4.setBorderPainted(false);
-        arrow4.setContentAreaFilled(false);
-        arrow4.setFocusPainted(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 7);
-        jPanel2.add(arrow4, gridBagConstraints);
+        lojaFilter.setBackground(new java.awt.Color(217, 217, 217));
+        lojaFilter.setForeground(new java.awt.Color(0, 0, 0));
+        lojaFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        filterPane.add(lojaFilter);
+        lojaFilter.setBounds(7, 70, 140, 24);
 
-        arrow5.setBackground(new java.awt.Color(217, 217, 217));
-        arrow5.setForeground(new java.awt.Color(0, 0, 0));
-        arrow5.setText("▼");
-        arrow5.setBorder(null);
-        arrow5.setBorderPainted(false);
-        arrow5.setContentAreaFilled(false);
-        arrow5.setFocusPainted(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 7);
-        jPanel2.add(arrow5, gridBagConstraints);
+        ongFilter.setBackground(new java.awt.Color(217, 217, 217));
+        ongFilter.setForeground(new java.awt.Color(0, 0, 0));
+        ongFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        filterPane.add(ongFilter);
+        ongFilter.setBounds(7, 100, 140, 24);
 
-        arrow6.setBackground(new java.awt.Color(217, 217, 217));
-        arrow6.setForeground(new java.awt.Color(0, 0, 0));
-        arrow6.setText("▼");
-        arrow6.setBorder(null);
-        arrow6.setBorderPainted(false);
-        arrow6.setContentAreaFilled(false);
-        arrow6.setFocusPainted(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 7);
-        jPanel2.add(arrow6, gridBagConstraints);
+        especieFilter.setBackground(new java.awt.Color(217, 217, 217));
+        especieFilter.setForeground(new java.awt.Color(0, 0, 0));
+        especieFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        filterPane.add(especieFilter);
+        especieFilter.setBounds(7, 130, 140, 24);
 
-        arrow7.setBackground(new java.awt.Color(217, 217, 217));
-        arrow7.setForeground(new java.awt.Color(0, 0, 0));
-        arrow7.setText("▼");
-        arrow7.setBorder(null);
-        arrow7.setBorderPainted(false);
-        arrow7.setContentAreaFilled(false);
-        arrow7.setFocusPainted(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 14;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 7);
-        jPanel2.add(arrow7, gridBagConstraints);
+        idadeFilter.setBackground(new java.awt.Color(217, 217, 217));
+        idadeFilter.setForeground(new java.awt.Color(0, 0, 0));
+        idadeFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        filterPane.add(idadeFilter);
+        idadeFilter.setBounds(7, 160, 140, 24);
 
-        arrow8.setBackground(new java.awt.Color(217, 217, 217));
-        arrow8.setForeground(new java.awt.Color(0, 0, 0));
-        arrow8.setText("▼");
-        arrow8.setBorder(null);
-        arrow8.setBorderPainted(false);
-        arrow8.setContentAreaFilled(false);
-        arrow8.setFocusPainted(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 7);
-        jPanel2.add(arrow8, gridBagConstraints);
+        porteFilter.setBackground(new java.awt.Color(217, 217, 217));
+        porteFilter.setForeground(new java.awt.Color(0, 0, 0));
+        porteFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        filterPane.add(porteFilter);
+        porteFilter.setBounds(7, 190, 140, 24);
 
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(10, 140, 150, 360);
+        sexoFilter.setBackground(new java.awt.Color(217, 217, 217));
+        sexoFilter.setForeground(new java.awt.Color(0, 0, 0));
+        sexoFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        filterPane.add(sexoFilter);
+        sexoFilter.setBounds(7, 219, 140, 24);
+
+        getContentPane().add(filterPane);
+        filterPane.setBounds(10, 140, 150, 280);
+
+        jPanel3.setBackground(new java.awt.Color(217, 217, 217));
+        getContentPane().add(jPanel3);
+        jPanel3.setBounds(190, 140, 440, 410);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -304,24 +157,17 @@ public class TelaAdocao extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton arrow1;
-    private javax.swing.JButton arrow2;
-    private javax.swing.JButton arrow3;
-    private javax.swing.JButton arrow4;
-    private javax.swing.JButton arrow5;
-    private javax.swing.JButton arrow6;
-    private javax.swing.JButton arrow7;
-    private javax.swing.JButton arrow8;
     private javax.swing.JButton btAplicar;
-    private javax.swing.JLabel cidade;
-    private javax.swing.JLabel especie;
-    private javax.swing.JLabel estado;
-    private javax.swing.JLabel idade;
+    private javax.swing.JComboBox<String> cidadesFilter;
+    private javax.swing.JComboBox<String> especieFilter;
+    private javax.swing.JComboBox<String> estadosFilter;
+    private javax.swing.JPanel filterPane;
+    private javax.swing.JComboBox<String> idadeFilter;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel loja;
-    private javax.swing.JLabel ong;
-    private javax.swing.JLabel porte;
-    private javax.swing.JLabel sexo;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JComboBox<String> lojaFilter;
+    private javax.swing.JComboBox<String> ongFilter;
+    private javax.swing.JComboBox<String> porteFilter;
+    private javax.swing.JComboBox<String> sexoFilter;
     // End of variables declaration//GEN-END:variables
 }

@@ -9,20 +9,21 @@ import java.sql.SQLException;
 
 public class Admin {
     private boolean isAdmin;
-    private String name;
-    private String login;
-    private String senha;
+    private int codigoADM;
+    private String nomeADM;
+    private String loginADM;
+    private String senhaADM;
 
-    public Admin(boolean isAdmin, String name, String login, String senha) {
+    public Admin(boolean isAdmin, int codigoADM, String nomeADM, String loginADM, String senhaADM) {
         this.isAdmin = isAdmin;
-        this.name = name;
-        this.login = login;
-        this.senha = senha;
+        this.codigoADM = codigoADM;
+        this.nomeADM = nomeADM;
+        this.loginADM = loginADM;
+        this.senhaADM = senhaADM;
     }
 
     public Admin() {
     }
-
     
     
 
@@ -34,42 +35,56 @@ public class Admin {
         this.isAdmin = isAdmin;
     }
 
-    public String getName() {
-        return name;
+    public int getCodigoADM() {
+        return codigoADM;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCodigoADM(int codigoADM) {
+        this.codigoADM = codigoADM;
     }
 
-    public String getLogin() {
-        return login;
+    public String getNomeADM() {
+        return nomeADM;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setNomeADM(String nomeADM) {
+        this.nomeADM = nomeADM;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getLoginADM() {
+        return loginADM;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setLoginADM(String loginADM) {
+        this.loginADM = loginADM;
     }
-        public boolean validaUser() throws SQLException{
-        String sql = "Select * FROM tb_pessoa WHERE login = ? AND senha = ?";
+
+    public String getSenhaADM() {
+        return senhaADM;
+    }
+
+    public void setSenhaADM(String senhaADM) {
+        this.senhaADM = senhaADM;
+    }
+    
+        public boolean validaADM() throws SQLException{
+        String sql = "Select nomeADM FROM tb_admin WHERE loginADM = ? AND senhaADM = ?";
         
         ConnectionFactory cf = new ConnectionFactory();
         
         try (Connection conn = cf.getConnection(); PreparedStatement ps = conn.prepareStatement(sql);){
-            ps.setString(1, getLogin());
-            ps.setString(2, getSenha());
+            ps.setString(1, getLoginADM());
+            ps.setString(2, getSenhaADM());
             
             ResultSet rs = ps.executeQuery();
             
             System.out.println("Lido com sucesso.");
-            return rs.next();
+            if(rs.next()){
+                nomeADM = rs.getString("nomeADM");
+                return true;
+            } else {
+                return false;
+            }
         } catch (Exception e){
             e.printStackTrace();
             System.out.println("Não localizado.");

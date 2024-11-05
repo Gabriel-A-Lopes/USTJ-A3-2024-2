@@ -26,6 +26,7 @@ public class TelaLogin extends javax.swing.JFrame {
     public TelaLogin() {
         initComponents();
     }
+    public boolean isAdmin;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -238,17 +239,29 @@ public class TelaLogin extends javax.swing.JFrame {
         
         
         Admin adm = new Admin();
+        Funcionario func = new Funcionario();
         String login = txtLogin.getText();
         String senha = txtSenha.getText();
         
-        adm.setLogin(login);
-        adm.setSenha(senha);
+        func.setLoginFunc(login);
+        func.setSenhaFunc(senha);
+        
+        adm.setLoginADM(login);
+        adm.setSenhaADM(senha);
         
         
         try {
-            if(adm.validaUser()){
-                JOptionPane.showMessageDialog(null, "Bem vindo, " + adm.getName());
-            } else {
+            if(func.validaUser()){
+                JOptionPane.showMessageDialog(null, "Bem vindo, " + func.getNomeFunc());
+                new HomeUser().setVisible(true);
+                dispose();
+            } else if (adm.validaADM()){
+                adm.setIsAdmin(true); 
+                JOptionPane.showMessageDialog(null, "Bem Vindo, " + adm.getNomeADM());
+                new HomeUser().setVisible(true);
+                dispose();
+            }
+            else {
                 JOptionPane.showMessageDialog(null, "Usuário Inválido");
             }
         } catch (SQLException ex) {
