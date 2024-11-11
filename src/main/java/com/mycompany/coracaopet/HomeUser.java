@@ -21,10 +21,14 @@ public class HomeUser extends javax.swing.JFrame {
 
     /**
      * Creates new form homeuser
+     * @param adm
      */
-    public HomeUser() {
+    public HomeUser(Admin adm) {
         initComponents();
+        System.out.println(adm.isIsAdmin());
+        btVisibilityAdmin(adm);
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,9 +43,7 @@ public class HomeUser extends javax.swing.JFrame {
         homebutton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         roundButton = new jbutton6("C:\\Users\\USER\\Downloads\\Rectangle 14 (1).png");
@@ -50,6 +52,8 @@ public class HomeUser extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jButton7 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        btOrg = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -59,8 +63,10 @@ public class HomeUser extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(21, 198, 148));
 
         homebutton.setBackground(new java.awt.Color(217, 217, 217));
+        homebutton.setFont(new java.awt.Font("Hammersmith One", 0, 11)); // NOI18N
         homebutton.setText("HOME");
         homebutton.setFocusPainted(false);
+        homebutton.setPreferredSize(new java.awt.Dimension(80, 25));
         homebutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 homebuttonActionPerformed(evt);
@@ -68,6 +74,7 @@ public class HomeUser extends javax.swing.JFrame {
         });
 
         jButton1.setBackground(new java.awt.Color(217, 217, 217));
+        jButton1.setFont(new java.awt.Font("Hammersmith One", 0, 11)); // NOI18N
         jButton1.setText("ADOÇÃO");
         jButton1.setFocusPainted(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -77,81 +84,51 @@ public class HomeUser extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new java.awt.Color(217, 217, 217));
+        jButton2.setFont(new java.awt.Font("Hammersmith One", 0, 11)); // NOI18N
         jButton2.setText("VACINAS");
         jButton2.setFocusPainted(false);
+        jButton2.setPreferredSize(new java.awt.Dimension(80, 25));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(74, 102, 241));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("SUPORTE");
-        jButton3.setFocusPainted(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/image_2.png"))); // NOI18N
-
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Ellipse_1_1.png"))); // NOI18N
-        jButton4.setBorder(null);
-        jButton4.setContentAreaFilled(false);
-        jButton4.setDefaultCapable(false);
-        jButton4.setFocusPainted(false);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(homebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65)
-                        .addComponent(jButton1)
-                        .addGap(73, 73, 73)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)))
-                .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(44, 44, 44)
+                .addComponent(homebutton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addComponent(jButton1)
+                .addGap(65, 65, 65)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 305, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(234, 234, 234))
+                .addGap(25, 25, 25))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton3)
-                .addGap(2, 2, 2)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(homebutton)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(34, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(homebutton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 1010, 96);
+        jPanel1.setBounds(0, 0, 800, 96);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ADOCAO_1.png"))); // NOI18N
         getContentPane().add(jLabel3);
@@ -232,6 +209,27 @@ public class HomeUser extends javax.swing.JFrame {
         getContentPane().add(jButton7);
         jButton7.setBounds(470, 220, 290, 80);
 
+        jTextField1.setEditable(false);
+        jTextField1.setFont(new java.awt.Font("Hammersmith One", 0, 18)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField1.setText("Organização");
+        jTextField1.setBorder(null);
+        jTextField1.setFocusable(false);
+        jTextField1.setOpaque(false);
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(60, 350, 110, 30);
+
+        btOrg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IMG_9272.png"))); // NOI18N
+        btOrg.setText("Organização");
+        btOrg.setFocusable(false);
+        btOrg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btOrgActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btOrg);
+        btOrg.setBounds(40, 340, 320, 180);
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -248,14 +246,6 @@ public class HomeUser extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void roundButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roundButtonActionPerformed
         // TODO add your handling code here:
@@ -278,6 +268,16 @@ public class HomeUser extends javax.swing.JFrame {
        JOptionPane.showMessageDialog(null, "VACINAS");
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void btOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btOrgActionPerformed
+        // TODO add your handling code here:
+        new CrudFuncionarios().setVisible(true);
+    }//GEN-LAST:event_btOrgActionPerformed
+
+    private void btVisibilityAdmin(Admin adm) {
+        System.out.println("Valor de isAdmin na visibilidade: " + adm.isIsAdmin());
+        btOrg.setVisible(adm.isIsAdmin());
+        jTextField1.setVisible(adm.isIsAdmin());
+    }
     /**
      * @param args the command line arguments
      */
@@ -308,17 +308,18 @@ public class HomeUser extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HomeUser().setVisible(true);
+                Admin adm = new Admin();
+                adm.setIsAdmin(true);
+                new HomeUser(adm).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btOrg;
     private javax.swing.JButton homebutton;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
@@ -328,6 +329,7 @@ public class HomeUser extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton roundButton;
     // End of variables declaration//GEN-END:variables
 }
