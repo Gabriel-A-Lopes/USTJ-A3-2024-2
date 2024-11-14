@@ -45,15 +45,11 @@ public class HomeUser extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        roundButton = new jbutton6("C:\\Users\\USER\\Downloads\\Rectangle 14 (1).png");
         jLabel2 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        roundButton = new jbutton6("C:\\Users\\USER\\Downloads\\Rectangle 14 (1).png");
+        jLabel4 = new javax.swing.JLabel();
         btOrg = new javax.swing.JButton();
+        roundButton1 = new jbutton6("C:\\Users\\USER\\Downloads\\Rectangle 14 (1).png");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -128,107 +124,68 @@ public class HomeUser extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 800, 96);
+        jPanel1.setBounds(0, 0, 800, 90);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ADOCAO_1.png"))); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(60, 110, 120, 50);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CURIOSIDADES_2.png"))); // NOI18N
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(630, 120, 120, 20);
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\REGISTRO DE ANIMAIS.png")); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(60, 350, 300, 30);
 
         roundButton.setPreferredSize(new Dimension(100, 100));
         add(roundButton);
-        roundButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BT ADOCAO.png"))); // NOI18N
+        roundButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\OneDrive\\Documentos\\NetBeansProjects\\USTJ-A3-2024-2\\src\\main\\resources\\images\\CRUD DE ANIMAIS FEITO.png")); // NOI18N
         roundButton.setBorder(null);
         roundButton.setBorderPainted(false);
         roundButton.setContentAreaFilled(false);
         roundButton.setFocusPainted(false);
-        roundButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BT ADOCAO DARK.png"))); // NOI18N
-        roundButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BT ADOCAO SHINY.png"))); // NOI18N
+        roundButton.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\CRUD DE ANIMAIS SHINY.png")); // NOI18N
+        roundButton.setSelectedIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\CRUD DE ANIMAIS DARK.png")); // NOI18N
         roundButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 roundButtonActionPerformed(evt);
             }
         });
         getContentPane().add(roundButton);
-        roundButton.setBounds(40, 100, 400, 210);
+        roundButton.setBounds(40, 330, 400, 210);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/LOJA_1.png"))); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(490, 120, 70, 20);
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\ORGANIZAÇÃO (1).png")); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(450, 260, 210, 37);
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/imgcuriosidades.png"))); // NOI18N
-        jButton5.setBorder(null);
-        jButton5.setBorderPainted(false);
-        jButton5.setContentAreaFilled(false);
-        jButton5.setFocusPainted(false);
-        jButton5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/imgcuriosidadesdark.png"))); // NOI18N
-        jButton5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/imgcuriosidadeshiny.png"))); // NOI18N
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(620, 110, 140, 100);
-
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/imgloja.png"))); // NOI18N
-        jButton6.setBorder(null);
-        jButton6.setBorderPainted(false);
-        jButton6.setContentAreaFilled(false);
-        jButton6.setFocusPainted(false);
-        jButton6.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/imglojadark.png"))); // NOI18N
-        jButton6.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/imglojashiny.png"))); // NOI18N
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton6);
-        jButton6.setBounds(470, 110, 140, 100);
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/VACINAS.png"))); // NOI18N
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(560, 270, 110, 20);
-
-        jButton7.setBackground(new java.awt.Color(204, 204, 204));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BT VACINA.png"))); // NOI18N
-        jButton7.setBorder(null);
-        jButton7.setBorderPainted(false);
-        jButton7.setContentAreaFilled(false);
-        jButton7.setFocusPainted(false);
-        jButton7.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BT VACINA DARK.png"))); // NOI18N
-        jButton7.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BT VACINA SHINY.png"))); // NOI18N
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton7);
-        jButton7.setBounds(470, 220, 290, 80);
-
-        jTextField1.setEditable(false);
-        jTextField1.setFont(new java.awt.Font("Hammersmith One", 0, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField1.setText("Organização");
-        jTextField1.setBorder(null);
-        jTextField1.setFocusable(false);
-        jTextField1.setOpaque(false);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(60, 350, 110, 30);
-
-        btOrg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IMG_9272.png"))); // NOI18N
-        btOrg.setText("Organização");
+        btOrg.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\ORGANIZAÇÃO FEITO (1).png")); // NOI18N
+        btOrg.setBorderPainted(false);
+        btOrg.setContentAreaFilled(false);
         btOrg.setFocusable(false);
+        btOrg.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\organização shiny.png")); // NOI18N
+        btOrg.setSelectedIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\ORGANIZAÇÃO DARK (1) (1).png")); // NOI18N
         btOrg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btOrgActionPerformed(evt);
             }
         });
         getContentPane().add(btOrg);
-        btOrg.setBounds(40, 340, 320, 180);
+        btOrg.setBounds(440, 240, 340, 170);
+
+        roundButton.setPreferredSize(new Dimension(100, 100));
+        add(roundButton);
+        roundButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BT ADOCAO.png"))); // NOI18N
+        roundButton1.setBorder(null);
+        roundButton1.setBorderPainted(false);
+        roundButton1.setContentAreaFilled(false);
+        roundButton1.setFocusPainted(false);
+        roundButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BT ADOCAO DARK.png"))); // NOI18N
+        roundButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BT ADOCAO SHINY.png"))); // NOI18N
+        roundButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                roundButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(roundButton1);
+        roundButton1.setBounds(40, 100, 400, 210);
 
         pack();
         setLocationRelativeTo(null);
@@ -247,36 +204,25 @@ public class HomeUser extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void roundButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roundButtonActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Adocao");
-        
-    }//GEN-LAST:event_roundButtonActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "CURIOSIDADES");
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "LOJA");
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-       JOptionPane.showMessageDialog(null, "VACINAS");
-    }//GEN-LAST:event_jButton7ActionPerformed
-
     private void btOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btOrgActionPerformed
         // TODO add your handling code here:
         new CrudFuncionarios().setVisible(true);
     }//GEN-LAST:event_btOrgActionPerformed
 
+    private void roundButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roundButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_roundButton1ActionPerformed
+
+    private void roundButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roundButtonActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Adocao");
+
+    }//GEN-LAST:event_roundButtonActionPerformed
+
     private void btVisibilityAdmin(Admin adm) {
         System.out.println("Valor de isAdmin na visibilidade: " + adm.isIsAdmin());
         btOrg.setVisible(adm.isIsAdmin());
-        jTextField1.setVisible(adm.isIsAdmin());
+        jLabel4.setVisible(adm.isIsAdmin());
     }
     /**
      * @param args the command line arguments
@@ -320,16 +266,12 @@ public class HomeUser extends javax.swing.JFrame {
     private javax.swing.JButton homebutton;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton roundButton;
+    private javax.swing.JButton roundButton1;
     // End of variables declaration//GEN-END:variables
 }
