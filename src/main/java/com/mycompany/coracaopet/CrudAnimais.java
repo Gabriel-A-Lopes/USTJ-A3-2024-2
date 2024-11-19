@@ -8,15 +8,14 @@ package com.mycompany.coracaopet;
  *
  * @author ACER
  */
-public class CrudFuncionarios extends javax.swing.JFrame {
+public class CrudAnimais extends javax.swing.JFrame {
 
     /**
-     * Creates new form CrudFuncionarios
+     * Creates new form CrudAnimais
      */
-    public CrudFuncionarios() {
+    public CrudAnimais() {
         initComponents();
     }
-    Admin adm = new Admin();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,17 +31,18 @@ public class CrudFuncionarios extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jPanel2 = new RoundPanel();
-        jButton4 = new javax.swing.JButton();
-        btAtFunc = new javax.swing.JButton();
-        btTelaConsultar = new javax.swing.JButton();
-        btTelaApagar = new javax.swing.JButton();
         jPanel3 = new RoundPanel();
         jTextField1 = new javax.swing.JTextField();
+        jPanel2 = new RoundPanel();
+        btTelaCriarAnimal = new javax.swing.JButton();
+        btTelaAtAnimal = new javax.swing.JButton();
+        btTelaConsultarAnimal = new javax.swing.JButton();
+        btTelaApagarAnimal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
-        setSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(21, 198, 148));
@@ -80,7 +80,7 @@ public class CrudFuncionarios extends javax.swing.JFrame {
                 .addComponent(jButton2)
                 .addGap(65, 65, 65)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 305, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 310, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(25, 25, 25))
         );
@@ -102,46 +102,80 @@ public class CrudFuncionarios extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 800, 96);
 
+        jPanel3.setBackground(new java.awt.Color(192, 192, 192));
+        jPanel3.setPreferredSize(new java.awt.Dimension(246, 48));
+
+        jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(192, 192, 192));
+        jTextField1.setFont(new java.awt.Font("Hammersmith One", 0, 18)); // NOI18N
+        jTextField1.setText("Animais");
+        jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(89, Short.MAX_VALUE)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(87, 87, 87))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        getContentPane().add(jPanel3);
+        jPanel3.setBounds(80, 130, 243, 48);
+
         jPanel2.setBackground(new java.awt.Color(192, 192, 192));
         jPanel2.setPreferredSize(new java.awt.Dimension(246, 271));
 
-        jButton4.setBackground(new java.awt.Color(46, 150, 235));
-        jButton4.setFont(new java.awt.Font("Hammersmith One", 0, 14)); // NOI18N
-        jButton4.setText("Criar");
-        jButton4.setPreferredSize(new java.awt.Dimension(116, 43));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btTelaCriarAnimal.setBackground(new java.awt.Color(46, 150, 235));
+        btTelaCriarAnimal.setFont(new java.awt.Font("Hammersmith One", 0, 14)); // NOI18N
+        btTelaCriarAnimal.setText("Criar");
+        btTelaCriarAnimal.setPreferredSize(new java.awt.Dimension(116, 43));
+        btTelaCriarAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btTelaCriarAnimalActionPerformed(evt);
             }
         });
 
-        btAtFunc.setBackground(new java.awt.Color(46, 150, 235));
-        btAtFunc.setFont(new java.awt.Font("Hammersmith One", 0, 14)); // NOI18N
-        btAtFunc.setText("Atualizar ");
-        btAtFunc.setPreferredSize(new java.awt.Dimension(116, 43));
-        btAtFunc.addActionListener(new java.awt.event.ActionListener() {
+        btTelaAtAnimal.setBackground(new java.awt.Color(46, 150, 235));
+        btTelaAtAnimal.setFont(new java.awt.Font("Hammersmith One", 0, 14)); // NOI18N
+        btTelaAtAnimal.setText("Atualizar ");
+        btTelaAtAnimal.setPreferredSize(new java.awt.Dimension(116, 43));
+        btTelaAtAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAtFuncActionPerformed(evt);
+                btTelaAtAnimalActionPerformed(evt);
             }
         });
 
-        btTelaConsultar.setBackground(new java.awt.Color(46, 150, 235));
-        btTelaConsultar.setFont(new java.awt.Font("Hammersmith One", 0, 14)); // NOI18N
-        btTelaConsultar.setText("Consultar");
-        btTelaConsultar.setPreferredSize(new java.awt.Dimension(116, 43));
-        btTelaConsultar.addActionListener(new java.awt.event.ActionListener() {
+        btTelaConsultarAnimal.setBackground(new java.awt.Color(46, 150, 235));
+        btTelaConsultarAnimal.setFont(new java.awt.Font("Hammersmith One", 0, 14)); // NOI18N
+        btTelaConsultarAnimal.setText("Consultar");
+        btTelaConsultarAnimal.setPreferredSize(new java.awt.Dimension(116, 43));
+        btTelaConsultarAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btTelaConsultarActionPerformed(evt);
+                btTelaConsultarAnimalActionPerformed(evt);
             }
         });
 
-        btTelaApagar.setBackground(new java.awt.Color(46, 150, 235));
-        btTelaApagar.setFont(new java.awt.Font("Hammersmith One", 0, 14)); // NOI18N
-        btTelaApagar.setText("Apagar");
-        btTelaApagar.setPreferredSize(new java.awt.Dimension(116, 43));
-        btTelaApagar.addActionListener(new java.awt.event.ActionListener() {
+        btTelaApagarAnimal.setBackground(new java.awt.Color(46, 150, 235));
+        btTelaApagarAnimal.setFont(new java.awt.Font("Hammersmith One", 0, 14)); // NOI18N
+        btTelaApagarAnimal.setText("Apagar");
+        btTelaApagarAnimal.setPreferredSize(new java.awt.Dimension(116, 43));
+        btTelaApagarAnimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btTelaApagarActionPerformed(evt);
+                btTelaApagarAnimalActionPerformed(evt);
             }
         });
 
@@ -152,87 +186,60 @@ public class CrudFuncionarios extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(69, 69, 69)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btTelaConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btAtFunc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btTelaApagar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btTelaCriarAnimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btTelaConsultarAnimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btTelaAtAnimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btTelaApagarAnimal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btTelaCriarAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btAtFunc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btTelaAtAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btTelaConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btTelaConsultarAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btTelaApagar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btTelaApagarAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2);
         jPanel2.setBounds(80, 210, 246, 271);
 
-        jPanel3.setBackground(new java.awt.Color(192, 192, 192));
-        jPanel3.setPreferredSize(new java.awt.Dimension(246, 48));
-
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(192, 192, 192));
-        jTextField1.setFont(new java.awt.Font("Hammersmith One", 0, 18)); // NOI18N
-        jTextField1.setText("Funcionários");
-        jTextField1.setBorder(null);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(70, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel3);
-        jPanel3.setBounds(80, 130, 243, 48);
-
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        new FrameCriarFuncionario().setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void btAtFuncActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtFuncActionPerformed
-        // TODO add your handling code here:
-        new TelaAtualizarFuncionario().setVisible(true);
-    }//GEN-LAST:event_btAtFuncActionPerformed
-
-    private void btTelaApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTelaApagarActionPerformed
-        // TODO add your handling code here:
-        new TelaApagarFuncionarios().setVisible(true);
-    }//GEN-LAST:event_btTelaApagarActionPerformed
-
-    private void btTelaConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTelaConsultarActionPerformed
-        // TODO add your handling code here:
-        new TelaConsultarFuncionarios().setVisible(true);
-    }//GEN-LAST:event_btTelaConsultarActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btTelaCriarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTelaCriarAnimalActionPerformed
+        // TODO add your handling code here:
+        new CriarAnimal().setVisible(true);
+    }//GEN-LAST:event_btTelaCriarAnimalActionPerformed
+
+    private void btTelaAtAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTelaAtAnimalActionPerformed
+        // TODO add your handling code here:
+        new AtualizarAnimal().setVisible(true);
+    }//GEN-LAST:event_btTelaAtAnimalActionPerformed
+
+    private void btTelaConsultarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTelaConsultarAnimalActionPerformed
+        // TODO add your handling code here:
+        new BuscarAnimal().setVisible(true);
+    }//GEN-LAST:event_btTelaConsultarAnimalActionPerformed
+
+    private void btTelaApagarAnimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTelaApagarAnimalActionPerformed
+        // TODO add your handling code here:
+        new ApagarAnimal().setVisible(true);
+    }//GEN-LAST:event_btTelaApagarAnimalActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -251,32 +258,32 @@ public class CrudFuncionarios extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CrudFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CrudAnimais.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CrudFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CrudAnimais.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CrudFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CrudAnimais.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CrudFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CrudAnimais.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CrudFuncionarios().setVisible(true);
+                new CrudAnimais().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btAtFunc;
-    private javax.swing.JButton btTelaApagar;
-    private javax.swing.JButton btTelaConsultar;
+    private javax.swing.JButton btTelaApagarAnimal;
+    private javax.swing.JButton btTelaAtAnimal;
+    private javax.swing.JButton btTelaConsultarAnimal;
+    private javax.swing.JButton btTelaCriarAnimal;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -10,14 +10,14 @@ public class Funcionario {
     private String nomeFunc;
     private String loginFunc;
     private String senhaFunc;
-    private int codigoFunc;
+    private int idFuncionario;
 
-    public Funcionario(String org, String nomeFunc, String loginFunc, String senhaFunc, int codigoFunc) {
+    public Funcionario(String org, String nomeFunc, String loginFunc, String senhaFunc, int idFuncionario) {
         this.org = org;
         this.nomeFunc = nomeFunc;
         this.loginFunc = loginFunc;
         this.senhaFunc = senhaFunc;
-        this.codigoFunc = codigoFunc;
+        this.idFuncionario = idFuncionario;
     }
 
     public Funcionario() {
@@ -58,11 +58,11 @@ public class Funcionario {
     }
 
     public int getCodigoFunc() {
-        return codigoFunc;
+        return idFuncionario;
     }
 
-    public void setCodigoFunc(int codigoFunc) {
-        this.codigoFunc = codigoFunc;
+    public void setCodigoFunc(int idFuncionario) {
+        this.idFuncionario = idFuncionario;
     }
     public boolean validaUser() throws SQLException{
         String sql = "Select nomeFunc FROM tb_funcionarios WHERE loginFunc = ? AND senhaFunc = ?";

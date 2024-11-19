@@ -155,7 +155,7 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\USER\Downloads\REGISTRO DE ANIMAIS.png"/>
+          <Image iconType="3" name="/images/REGISTRODEANIMAIS.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -167,7 +167,7 @@
     <Component class="javax.swing.JButton" name="roundButton">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\USER\OneDrive\Documentos\NetBeansProjects\USTJ-A3-2024-2\src\main\resources\images\CRUD DE ANIMAIS FEITO.png"/>
+          <Image iconType="3" name="/images/crud_de_animais.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -176,10 +176,10 @@
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\USER\Downloads\CRUD DE ANIMAIS SHINY.png"/>
+          <Image iconType="3" name="/images/crud_de_animais_shiny.png"/>
         </Property>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\USER\Downloads\CRUD DE ANIMAIS DARK.png"/>
+          <Image iconType="3" name="/images/crud_de_animais_dark.png"/>
         </Property>
       </Properties>
       <Events>
@@ -198,7 +198,7 @@
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\USER\Downloads\ORGANIZA&#xc7;&#xc3;O (1).png"/>
+          <Image iconType="3" name="/images/tituloOrganizacao.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel4"/>
       </Properties>
@@ -211,16 +211,16 @@
     <Component class="javax.swing.JButton" name="btOrg">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\USER\Downloads\ORGANIZA&#xc7;&#xc3;O FEITO (1).png"/>
+          <Image iconType="3" name="/images/organizacao.png"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
         <Property name="focusable" type="boolean" value="false"/>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\USER\Downloads\organiza&#xe7;&#xe3;o shiny.png"/>
+          <Image iconType="3" name="/images/organizacao_shiny.png"/>
         </Property>
         <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\USER\Downloads\ORGANIZA&#xc7;&#xc3;O DARK (1) (1).png"/>
+          <Image iconType="3" name="/images/organizacao_dark.png"/>
         </Property>
       </Properties>
       <Events>

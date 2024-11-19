@@ -124,25 +124,25 @@ public class HomeUser extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 800, 90);
+        jPanel1.setBounds(0, 0, 800, 96);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ADOCAO_1.png"))); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(60, 110, 120, 50);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\REGISTRO DE ANIMAIS.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/REGISTRODEANIMAIS.png"))); // NOI18N
         getContentPane().add(jLabel2);
         jLabel2.setBounds(60, 350, 300, 30);
 
         roundButton.setPreferredSize(new Dimension(100, 100));
         add(roundButton);
-        roundButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\OneDrive\\Documentos\\NetBeansProjects\\USTJ-A3-2024-2\\src\\main\\resources\\images\\CRUD DE ANIMAIS FEITO.png")); // NOI18N
+        roundButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/crud_de_animais.png"))); // NOI18N
         roundButton.setBorder(null);
         roundButton.setBorderPainted(false);
         roundButton.setContentAreaFilled(false);
         roundButton.setFocusPainted(false);
-        roundButton.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\CRUD DE ANIMAIS SHINY.png")); // NOI18N
-        roundButton.setSelectedIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\CRUD DE ANIMAIS DARK.png")); // NOI18N
+        roundButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/crud_de_animais_shiny.png"))); // NOI18N
+        roundButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/crud_de_animais_dark.png"))); // NOI18N
         roundButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 roundButtonActionPerformed(evt);
@@ -151,17 +151,17 @@ public class HomeUser extends javax.swing.JFrame {
         getContentPane().add(roundButton);
         roundButton.setBounds(40, 330, 400, 210);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\ORGANIZAÇÃO (1).png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tituloOrganizacao.png"))); // NOI18N
         jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(450, 260, 210, 37);
 
-        btOrg.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\ORGANIZAÇÃO FEITO (1).png")); // NOI18N
+        btOrg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/organizacao.png"))); // NOI18N
         btOrg.setBorderPainted(false);
         btOrg.setContentAreaFilled(false);
         btOrg.setFocusable(false);
-        btOrg.setRolloverIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\organização shiny.png")); // NOI18N
-        btOrg.setSelectedIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\ORGANIZAÇÃO DARK (1) (1).png")); // NOI18N
+        btOrg.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/images/organizacao_shiny.png"))); // NOI18N
+        btOrg.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/organizacao_dark.png"))); // NOI18N
         btOrg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btOrgActionPerformed(evt);
@@ -215,7 +215,7 @@ public class HomeUser extends javax.swing.JFrame {
 
     private void roundButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roundButtonActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Adocao");
+        new CrudAnimais().setVisible(true);
 
     }//GEN-LAST:event_roundButtonActionPerformed
 
