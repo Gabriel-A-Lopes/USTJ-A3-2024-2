@@ -28,10 +28,7 @@ public class CrudFuncionarios extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
         jPanel2 = new RoundPanel();
         jButton4 = new javax.swing.JButton();
         btAtFunc = new javax.swing.JButton();
@@ -47,57 +44,11 @@ public class CrudFuncionarios extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(21, 198, 148));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 96));
+        jPanel1.setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/image_2.png"))); // NOI18N
-
-        jButton1.setBackground(new java.awt.Color(217, 217, 217));
-        jButton1.setFont(new java.awt.Font("Hammersmith One", 0, 11)); // NOI18N
-        jButton1.setText("HOME");
-        jButton1.setPreferredSize(new java.awt.Dimension(80, 25));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setBackground(new java.awt.Color(217, 217, 217));
-        jButton2.setFont(new java.awt.Font("Hammersmith One", 0, 11)); // NOI18N
-        jButton2.setText("ADOÇÃO");
-
-        jButton3.setBackground(new java.awt.Color(217, 217, 217));
-        jButton3.setFont(new java.awt.Font("Hammersmith One", 0, 11)); // NOI18N
-        jButton3.setText("VACINAS");
-        jButton3.setPreferredSize(new java.awt.Dimension(80, 25));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(jButton2)
-                .addGap(65, 65, 65)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 305, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(25, 25, 25))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/asd.png"))); // NOI18N
+        jPanel1.add(jLabel18);
+        jLabel18.setBounds(350, -10, 90, 100);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 800, 96);
@@ -173,7 +124,7 @@ public class CrudFuncionarios extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel2);
-        jPanel2.setBounds(80, 210, 246, 271);
+        jPanel2.setBounds(280, 200, 246, 271);
 
         jPanel3.setBackground(new java.awt.Color(192, 192, 192));
         jPanel3.setPreferredSize(new java.awt.Dimension(246, 48));
@@ -202,7 +153,7 @@ public class CrudFuncionarios extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel3);
-        jPanel3.setBounds(80, 130, 243, 48);
+        jPanel3.setBounds(280, 130, 243, 48);
 
         pack();
         setLocationRelativeTo(null);
@@ -227,12 +178,6 @@ public class CrudFuncionarios extends javax.swing.JFrame {
         // TODO add your handling code here:
         new TelaConsultarFuncionarios().setVisible(true);
     }//GEN-LAST:event_btTelaConsultarActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,11 +218,8 @@ public class CrudFuncionarios extends javax.swing.JFrame {
     private javax.swing.JButton btAtFunc;
     private javax.swing.JButton btTelaApagar;
     private javax.swing.JButton btTelaConsultar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

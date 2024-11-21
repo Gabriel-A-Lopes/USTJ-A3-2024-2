@@ -4,19 +4,84 @@
  */
 package com.mycompany.coracaopet;
 
+import database.ConnectionFactory;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JOptionPane; 
+import javax.swing.JTextField;
+
+
+   
+
+
+
 /**
  *
  * @author ACER
  */
-public class TelaAdocao extends javax.swing.JFrame {
-
+public class TelaAdocao extends javax.swing.JFrame { 
     /**
      * Creates new form TelaAdocao
      */
-    public TelaAdocao() {
+    public TelaAdocao() throws SQLException {        
         initComponents();
-    }
-
+        configurarTabela();
+        carregarAnimaisAdocao();
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+           public void actionPerformed(java.awt.event.ActionEvent evt) {
+             int selectedRow = jTable1.getSelectedRow();
+               if (selectedRow != -1) {
+                 JTextField nomeField = new JTextField();
+                 JTextField cpfField = new JTextField();
+                 JTextField enderecoField = new JTextField();
+                 JTextField numeroField = new JTextField();
+                    Object[] message ={
+                    "Nome:", nomeField,
+                    "CPF:", cpfField,
+                    "Endereço:", enderecoField,
+                    "Número:", numeroField
+                    };
+                    int option = JOptionPane.showConfirmDialog(null, message, "Informações do Adotante", JOptionPane.OK_CANCEL_OPTION);
+                    if (option == JOptionPane.OK_OPTION) {
+                    String nome = nomeField.getText();
+                    String cpf = cpfField.getText();
+                    String endereco = enderecoField.getText();
+                    String numero = numeroField.getText();
+                    System.out.println("Adotante: " + nome + ", CPF: " + cpf + ", Endereço: " + endereco + ", Número: " + numero);
+                    
+                 }
+               }else{
+                   JOptionPane.showMessageDialog(null, "Por favor, selecione um animal para adotar.");
+                }
+               }
+            });
+     }
+    private void configurarTabela(){
+        jTable1.setModel(new DefaultTableModel(
+                new Object [][] {},
+                new String [] {
+                    "Nome do Animal", 
+                    "Tipo do Animal", 
+                    "Raça do Animal", 
+                    "Cor", 
+                    "Local", 
+                    "Idade", 
+                    "Castrado"
+                }
+             ){             
+            boolean[] canEdit = new boolean [] {
+                    false, false, false, false, false, false, false
+        };
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit [columnIndex];
+        }
+     });                                
+  }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,17 +92,10 @@ public class TelaAdocao extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        filterPane = new RoundPanel();
-        btAplicar = new javax.swing.JButton();
-        estadosFilter = new javax.swing.JComboBox<>();
-        cidadesFilter = new javax.swing.JComboBox<>();
-        lojaFilter = new javax.swing.JComboBox<>();
-        ongFilter = new javax.swing.JComboBox<>();
-        especieFilter = new javax.swing.JComboBox<>();
-        idadeFilter = new javax.swing.JComboBox<>();
-        porteFilter = new javax.swing.JComboBox<>();
-        sexoFilter = new javax.swing.JComboBox<>();
-        jPanel3 = new RoundPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -48,78 +106,76 @@ public class TelaAdocao extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(21, 198, 148));
         jPanel1.setPreferredSize(new java.awt.Dimension(100, 96));
         jPanel1.setLayout(null);
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/asd.png"))); // NOI18N
+        jPanel1.add(jLabel18);
+        jLabel18.setBounds(350, -10, 90, 100);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 800, 96);
 
-        filterPane.setBackground(new java.awt.Color(217, 217, 217));
-        filterPane.setLayout(null);
+        jButton2.setBackground(new java.awt.Color(46, 150, 235));
+        jButton2.setText("ADOTAR");
+        jButton2.setActionCommand("adoptButton");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(360, 500, 80, 23);
 
-        btAplicar.setBackground(new java.awt.Color(21, 198, 148));
-        btAplicar.setFont(new java.awt.Font("Hammersmith One", 0, 11)); // NOI18N
-        btAplicar.setForeground(new java.awt.Color(0, 0, 0));
-        btAplicar.setText("Aplicar");
-        btAplicar.setFocusPainted(false);
-        filterPane.add(btAplicar);
-        btAplicar.setBounds(40, 250, 68, 24);
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
-        estadosFilter.setBackground(new java.awt.Color(217, 217, 217));
-        estadosFilter.setForeground(new java.awt.Color(0, 0, 0));
-        estadosFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        estadosFilter.setFocusable(false);
-        filterPane.add(estadosFilter);
-        estadosFilter.setBounds(7, 10, 140, 24);
-
-        cidadesFilter.setBackground(new java.awt.Color(217, 217, 217));
-        cidadesFilter.setForeground(new java.awt.Color(0, 0, 0));
-        cidadesFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        filterPane.add(cidadesFilter);
-        cidadesFilter.setBounds(7, 40, 140, 24);
-
-        lojaFilter.setBackground(new java.awt.Color(217, 217, 217));
-        lojaFilter.setForeground(new java.awt.Color(0, 0, 0));
-        lojaFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        filterPane.add(lojaFilter);
-        lojaFilter.setBounds(7, 70, 140, 24);
-
-        ongFilter.setBackground(new java.awt.Color(217, 217, 217));
-        ongFilter.setForeground(new java.awt.Color(0, 0, 0));
-        ongFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        filterPane.add(ongFilter);
-        ongFilter.setBounds(7, 100, 140, 24);
-
-        especieFilter.setBackground(new java.awt.Color(217, 217, 217));
-        especieFilter.setForeground(new java.awt.Color(0, 0, 0));
-        especieFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        filterPane.add(especieFilter);
-        especieFilter.setBounds(7, 130, 140, 24);
-
-        idadeFilter.setBackground(new java.awt.Color(217, 217, 217));
-        idadeFilter.setForeground(new java.awt.Color(0, 0, 0));
-        idadeFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        filterPane.add(idadeFilter);
-        idadeFilter.setBounds(7, 160, 140, 24);
-
-        porteFilter.setBackground(new java.awt.Color(217, 217, 217));
-        porteFilter.setForeground(new java.awt.Color(0, 0, 0));
-        porteFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        filterPane.add(porteFilter);
-        porteFilter.setBounds(7, 190, 140, 24);
-
-        sexoFilter.setBackground(new java.awt.Color(217, 217, 217));
-        sexoFilter.setForeground(new java.awt.Color(0, 0, 0));
-        sexoFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        filterPane.add(sexoFilter);
-        sexoFilter.setBounds(7, 219, 140, 24);
-
-        getContentPane().add(filterPane);
-        filterPane.setBounds(10, 140, 150, 280);
-
-        jPanel3.setBackground(new java.awt.Color(217, 217, 217));
-        getContentPane().add(jPanel3);
-        jPanel3.setBounds(190, 140, 440, 410);
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(170, 100, 452, 402);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+    public DefaultTableModel buscarAnimalAdocao() throws SQLException{
+        String sql = "select * from tb_animais";
+        ConnectionFactory cf = new ConnectionFactory();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel(); 
+        model.setRowCount(0);
+        
+        try (Connection conn = cf.getConnection(); PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                String nomeAnimal = rs.getString("nomeAnimal");
+                String tipoAnimal = rs.getString("tipoAnimal");
+                String racaAnimal = rs.getString("racaAnimal");
+                String cor = rs.getString("cor");
+                String local = rs.getString("local");
+                String idade = rs.getString("idade");
+                String castrado = rs.getString("castrado");
+                model.addRow(new Object[]{nomeAnimal, tipoAnimal, racaAnimal, cor, local, idade, castrado});
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return model;
+    }
+   private void carregarAnimaisAdocao() throws SQLException {
+       buscarAnimalAdocao();
+   }
+    
+    
+    
 
     /**
      * @param args the command line arguments
@@ -151,23 +207,24 @@ public class TelaAdocao extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaAdocao().setVisible(true);
+                try {
+                    new TelaAdocao().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(TelaAdocao.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btAplicar;
-    private javax.swing.JComboBox<String> cidadesFilter;
-    private javax.swing.JComboBox<String> especieFilter;
-    private javax.swing.JComboBox<String> estadosFilter;
-    private javax.swing.JPanel filterPane;
-    private javax.swing.JComboBox<String> idadeFilter;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JComboBox<String> lojaFilter;
-    private javax.swing.JComboBox<String> ongFilter;
-    private javax.swing.JComboBox<String> porteFilter;
-    private javax.swing.JComboBox<String> sexoFilter;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    private void setTittle(String adoção_de_Pets) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

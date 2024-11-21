@@ -77,7 +77,7 @@ public class ApagarAnimal extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(270, 140, 243, 48);
+        jPanel1.setBounds(270, 140, 238, 36);
 
         jPanel3.setBackground(new java.awt.Color(192, 192, 192));
 
@@ -133,7 +133,7 @@ public class ApagarAnimal extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel3);
-        jPanel3.setBounds(270, 240, 240, 128);
+        jPanel3.setBounds(270, 240, 240, 119);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/asd.png"))); // NOI18N
         jLabel1.setText("jLabel1");

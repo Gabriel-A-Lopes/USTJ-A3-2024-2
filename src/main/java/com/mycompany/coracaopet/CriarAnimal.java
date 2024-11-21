@@ -88,7 +88,7 @@ public class CriarAnimal extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(270, 100, 243, 48);
+        jPanel1.setBounds(270, 100, 236, 36);
 
         jPanel2.setBackground(new java.awt.Color(192, 192, 192));
         jPanel2.setMinimumSize(new java.awt.Dimension(246, 271));

@@ -59,7 +59,7 @@ public class BuscarAnimal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabelaAnimais);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(149, 87, 453, 403);
+        jScrollPane1.setBounds(149, 87, 452, 402);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/asd.png"))); // NOI18N
         jLabel1.setText("jLabel1");
