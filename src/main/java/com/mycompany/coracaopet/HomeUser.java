@@ -52,6 +52,7 @@ public class HomeUser extends javax.swing.JFrame {
         roundButton1 = new jbutton6("C:\\Users\\USER\\Downloads\\Rectangle 14 (1).png");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Coração Pet");
         setMinimumSize(new java.awt.Dimension(800, 600));
         setResizable(false);
         getContentPane().setLayout(null);

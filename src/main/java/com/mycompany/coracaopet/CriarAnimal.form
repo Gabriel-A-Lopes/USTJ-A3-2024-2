@@ -112,15 +112,17 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txtCorAnimal" pref="182" max="32767" attributes="0"/>
-                      <Component id="txtRacaAnimal" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtTipoAnimal" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jTextField2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField4" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField6" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField8" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtNomeAnimal" alignment="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="txtCorAnimal" pref="182" max="32767" attributes="0"/>
+                          <Component id="txtRacaAnimal" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextField2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField4" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField6" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField8" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNomeAnimal" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="jComboBox1" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -133,7 +135,7 @@
                       </Group>
                       <Component id="btCriarAnimal" min="-2" pref="128" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -157,8 +159,8 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtTipoAnimal" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="txtIdadeAnimal" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="jComboBox1" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                   <Component id="jTextField6" min="-2" max="-2" attributes="0"/>
@@ -167,7 +169,7 @@
                       <Component id="txtRacaAnimal" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="checkCastrado" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="6" max="32767" attributes="0"/>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
                   <Component id="jTextField8" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -218,11 +220,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtTipoAnimal">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTipoAnimalActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField6">
@@ -331,6 +328,22 @@
             <Property name="text" type="java.lang.String" value="Ele &#xe9; Castrado?"/>
             <Property name="borderPainted" type="boolean" value="true"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="Cachorro"/>
+                <StringItem index="1" value="Gato"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

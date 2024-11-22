@@ -25,6 +25,23 @@ create table tb_animais(
     idade int,
     castrado boolean
 );
+create table tb_endereco(
+	enderecoID INT AUTO_INCREMENT PRIMARY KEY, 
+	rua varchar(200),
+	numero int,
+	complemento varchar(200),
+	cidade varchar(200)
+);
+    
+ create table tb_adotante(
+	idAdotante INT AUTO_INCREMENT PRIMARY KEY,
+    nome varchar(200),
+    cpf int,
+    telefone varchar(200),
+    enderecoID int, 
+	FOREIGN KEY (enderecoID) REFERENCES tb_endereco(enderecoID)
+ );   
+		
 
 insert into tb_funcionarios
 (nomeFunc, org, loginFunc, senhaFunc) values
@@ -38,6 +55,8 @@ insert into tb_admin
 select * from tb_funcionarios;
 select * from tb_admin;
 select * from tb_animais;
+select * from tb_adotante;
+select * from tb_endereco;
 
 delete from tb_funcionarios where codigoFunc = 4;
 delete from tb_animais;

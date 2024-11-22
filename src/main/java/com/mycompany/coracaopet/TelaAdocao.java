@@ -38,22 +38,49 @@ public class TelaAdocao extends javax.swing.JFrame {
                if (selectedRow != -1) {
                  JTextField nomeField = new JTextField();
                  JTextField cpfField = new JTextField();
-                 JTextField enderecoField = new JTextField();
-                 JTextField numeroField = new JTextField();
+                 JTextField telefoneField = new JTextField();
+                 
                     Object[] message ={
                     "Nome:", nomeField,
                     "CPF:", cpfField,
-                    "Endereço:", enderecoField,
-                    "Número:", numeroField
+                    "Telefone:", telefoneField,
+                    
                     };
                     int option = JOptionPane.showConfirmDialog(null, message, "Informações do Adotante", JOptionPane.OK_CANCEL_OPTION);
                     if (option == JOptionPane.OK_OPTION) {
+                      JTextField ruaField = new JTextField();
+                      JTextField numeroField = new JTextField();
+                      JTextField complementoField = new JTextField();
+                      JTextField cidadeField = new JTextField();
+                      Object[] addressInfo = {
+                          "Rua:", ruaField,
+                          "Número:", numeroField,
+                          "Complemento:", complementoField,
+                          "Cidade:", cidadeField,
+                      };
+                      int addressInfoOption = JOptionPane.showConfirmDialog(null, addressInfo, "Informações de Endereço", JOptionPane.OK_CANCEL_OPTION);
+                      if (addressInfoOption == JOptionPane.OK_OPTION) {
                     String nome = nomeField.getText();
-                    String cpf = cpfField.getText();
-                    String endereco = enderecoField.getText();
-                    String numero = numeroField.getText();
-                    System.out.println("Adotante: " + nome + ", CPF: " + cpf + ", Endereço: " + endereco + ", Número: " + numero);
                     
+                    int  cpf = 0;
+                    int numero = 0;
+                    try{
+                        cpf = Integer.parseInt(cpfField.getText());
+                        numero = Integer.parseInt(numeroField.getText());
+                    }catch (NumberFormatException e) {
+                        JOptionPane.showMessageDialog(null, "Por favor, insira um número válido para CPF e Número.");
+                        return;
+                    }
+                    String telefone = telefoneField.getText();
+                    String rua = ruaField.getText();
+                    String complemento = complementoField.getText();
+                    String cidade = cidadeField.getText(); 
+                    
+                    int enderecoID = inserirEndereco(rua, numero, complemento, cidade);
+                    if (enderecoID != -1) {
+                        inserirAdotante(nome, cpf, telefone, enderecoID);
+                    }
+                   } 
                  }
                }else{
                    JOptionPane.showMessageDialog(null, "Por favor, selecione um animal para adotar.");
@@ -82,6 +109,45 @@ public class TelaAdocao extends javax.swing.JFrame {
         }
      });                                
   }
+    private int inserirEndereco(String rua, int numero, String complemento, String cidade) {
+        String sql = "INSERT INTO tb_endereco (rua, numero, complemento, cidade) VALUES (?, ?, ?, ?)";
+        ConnectionFactory cf = new ConnectionFactory();
+        int enderecoID = -1;
+        
+        try (Connection conn = cf.getConnection(); PreparedStatement ps = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
+            ps.setString(1, rua);
+            ps.setInt(2, numero);
+            ps.setString(3, complemento);
+            ps.setString(4, cidade);
+            ps.executeUpdate();
+            
+            try (ResultSet rs = ps.getGeneratedKeys()) {
+                if (rs.next()) {
+                    enderecoID = rs.getInt(1);
+                }
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return enderecoID;
+    }
+    private void inserirAdotante(String nome, int cpf, String telefone, int enderecoID) {
+        String sql = "INSERT INTO tb_adotante (nome, cpf, telefone, enderecoID) VALUES (?, ?, ?, ?)";
+        ConnectionFactory cf = new ConnectionFactory();
+        
+        try (Connection conn = cf.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, nome);
+            ps.setInt(2, cpf);
+            ps.setString(3, telefone);
+            ps.setInt(4, enderecoID);
+            ps.executeUpdate();
+            System.out.println("Dados do adotante inseridos com sucesso!");
+            } catch (SQLException e) {
+                e.printStackTrace();
+        }
+        
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -97,7 +163,8 @@ public class TelaAdocao extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Coração Pet");
         setMinimumSize(new java.awt.Dimension(800, 600));
         setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
