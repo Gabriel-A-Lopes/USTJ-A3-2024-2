@@ -62,6 +62,7 @@ public class CrudAnimais extends javax.swing.JFrame {
         jTextField1.setFont(new java.awt.Font("Hammersmith One", 0, 18)); // NOI18N
         jTextField1.setText("Animais");
         jTextField1.setBorder(null);
+        jTextField1.setFocusable(false);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);

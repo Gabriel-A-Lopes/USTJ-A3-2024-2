@@ -135,6 +135,7 @@ public class CrudFuncionarios extends javax.swing.JFrame {
         jTextField1.setFont(new java.awt.Font("Hammersmith One", 0, 18)); // NOI18N
         jTextField1.setText("Funcionários");
         jTextField1.setBorder(null);
+        jTextField1.setFocusable(false);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);

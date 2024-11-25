@@ -130,12 +130,12 @@
                           <Component id="jTextField3" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="txtIdadeAnimal" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
                           <Component id="jTextField5" min="-2" max="-2" attributes="0"/>
-                          <Component id="checkCastrado" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
                           <Component id="txtLocalAnimal" alignment="1" min="-2" pref="172" max="-2" attributes="0"/>
+                          <Component id="checkCastrado" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
                       </Group>
                       <Component id="btCriarAnimal" min="-2" pref="128" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -169,7 +169,7 @@
                       <Component id="txtRacaAnimal" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="checkCastrado" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="25" max="32767" attributes="0"/>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
                   <Component id="jTextField8" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
