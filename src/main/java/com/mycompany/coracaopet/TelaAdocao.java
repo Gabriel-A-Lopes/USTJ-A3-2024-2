@@ -79,6 +79,9 @@ public class TelaAdocao extends javax.swing.JFrame {
                     int enderecoID = inserirEndereco(rua, numero, complemento, cidade);
                     if (enderecoID != -1) {
                         inserirAdotante(nome, cpf, telefone, enderecoID);
+                        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+                        model.removeRow(selectedRow);
+                        JOptionPane.showMessageDialog(null,"Parábens,Você adotou um pet!"); 
                     }
                    } 
                  }
